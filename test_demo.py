@@ -16,3 +16,11 @@ class TestDemo:
     @pytest.mark.parametrize("a,b", [[1, 2], [3, 4], [5, 6]])
     def test_one(self, a, b):
         assert b - a == 1
+
+    @pytest.mark.demo
+    def test_demo1(self):
+        assert 1 == 1
+
+    @pytest.mark.demo
+    def test_demo2(self):
+        assert 2 == 2
