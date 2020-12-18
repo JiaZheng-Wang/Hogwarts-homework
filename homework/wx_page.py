@@ -13,7 +13,7 @@ class PageWx(PageBase):
 
     # loc_menu_contacts = (By.CSS_SELECTOR, "#menu_contacts span")
     # loc_add_contacts = (By.CSS_SELECTOR, "span.index_service_cnt_item_title")
-
+    # todo：支持传参，添加按条件搜索的方法进行断言，目前默认取第一页
     def add_contacts(self):
         self.driver.find_element(By.CSS_SELECTOR, ".ww_indexImg_AddMember").click()
         self.driver.find_element(By.ID, "username").send_keys("王小二")
@@ -27,8 +27,8 @@ class PageWx(PageBase):
 
         contact_list = self.driver.find_elements(By.CSS_SELECTOR, ".member_colRight_memberTable_td span")
         text_list = []
+
         # 查出列表所有text并返回
         for i in contact_list:
             text_list.append(i.text)
-        print(text_list)
         return text_list
