@@ -24,7 +24,7 @@ class PageWx(PageBase):
         self.driver.find_element(By.CSS_SELECTOR, ".member_edit_sec:nth-child(2)").click()
         self.driver.find_element(By.ID, "memberAdd_title").send_keys("测试总监")
         self.driver.find_element(By.CSS_SELECTOR, ".member_colRight_operationBar:nth-child(3) > .js_btn_save").click()
-
+        self.driver.find_element_by_css_selector()
         contact_list = self.driver.find_elements(By.CSS_SELECTOR, ".member_colRight_memberTable_td span")
         text_list = []
 

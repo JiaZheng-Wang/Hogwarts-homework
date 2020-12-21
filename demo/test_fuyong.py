@@ -112,5 +112,5 @@ class TestFuYong:
         driver = webdriver.Chrome(options=chrome_opt)
         driver.get("https://work.weixin.qq.com/wework_admin/frame")
         cookies = driver.get_cookies()
-        with open("cookies.yaml", mode="w") as f:
+        with open("../cookies.yaml", mode="w") as f:
             yaml.dump(cookies, f)
