@@ -4,8 +4,8 @@
 # @Software: PyCharm
 from selenium.webdriver.common.by import By
 
-from homework.test_web_weixin.page.add_party_page import AddPartyPage
-from homework.test_web_weixin.page.base_page import BasePage
+from homework.test_web_weixin_2.page.add_party_page import AddPartyPage
+from homework.test_web_weixin_2.page.base_page import BasePage
 
 
 class ContactPage(BasePage):

@@ -2,12 +2,11 @@
 # @Author  : Sylar
 # @Explain : 
 # @Software: PyCharm
-from time import sleep
 
 import yaml
 from selenium import webdriver
 
-from homework.wx_page import PageWx
+from homework.test_web_weixin_login.wx_page import PageWx
 
 
 class TestWx:
@@ -20,7 +19,7 @@ class TestWx:
         driver = webdriver.Chrome(options=opt)
         driver.get("https://work.weixin.qq.com/wework_admin/frame")
         cookies = driver.get_cookies()
-        with open("./wx_cookies.yaml", "w") as f:
+        with open("wx_cookies.yaml", "w") as f:
             yaml.dump(cookies, f)
 
     def teardown_class(self):
@@ -31,7 +30,7 @@ class TestWx:
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
         self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?")
-        with open("./wx_cookies.yaml") as f:
+        with open("wx_cookies.yaml") as f:
             cookies = yaml.safe_load(f)
             for i in cookies:
                 if "expiry" in i:

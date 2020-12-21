@@ -2,11 +2,10 @@
 # @Author  : Sylar
 # @Explain : 
 # @Software: PyCharm
-from time import sleep
 
 from selenium.webdriver.common.by import By
 
-from homework.BasePage import PageBase
+from homework.test_web_weixin_login.BasePage import PageBase
 
 
 class PageWx(PageBase):

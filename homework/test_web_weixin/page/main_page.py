@@ -4,9 +4,9 @@
 # @Software: PyCharm
 from selenium.webdriver.common.by import By
 
-from homework.test_web_weixin.page.add_member_page import AddMemberPage
-from homework.test_web_weixin.page.base_page import BasePage
-from homework.test_web_weixin.page.contact_page import ContactPage
+from homework.test_web_weixin_2.page.add_member_page import AddMemberPage
+from homework.test_web_weixin_2.page.base_page import BasePage
+from homework.test_web_weixin_2.page.contact_page import ContactPage
 
 
 class MainPage(BasePage):

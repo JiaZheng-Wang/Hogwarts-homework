@@ -6,7 +6,7 @@ from time import sleep
 
 from selenium.webdriver.common.by import By
 
-from homework.test_web_weixin.page.base_page import BasePage
+from homework.test_web_weixin_2.page.base_page import BasePage
 
 
 
@@ -19,7 +19,7 @@ class AddPartyPage(BasePage):
         return self.driver.find_element(by=By.XPATH, value=f"//form//a[@class='jstree-anchor' and text()='{name}']")
 
     def add_party(self, name):
-        from homework.test_web_weixin.page.contact_page import ContactPage
+        from homework.test_web_weixin_2.page.contact_page import ContactPage
         self.find(self._loc_name).send_keys(name)
         self.find(self._loc_party_list).click()
         self.select_party("测试小站").click()
