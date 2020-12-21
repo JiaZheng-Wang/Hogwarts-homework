@@ -4,7 +4,7 @@
 # @Software: PyCharm
 import pytest
 
-from homework.test_web_weixin_2.page.main_page import MainPage
+from homework.test_web_weixin.page.main_page import MainPage
 
 
 class TestAddParty:
