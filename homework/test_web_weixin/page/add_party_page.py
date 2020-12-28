@@ -16,7 +16,9 @@ class AddPartyPage(BasePage):
     _loc_commit = (By.CSS_SELECTOR, "a.qui_btn.ww_btn.ww_btn_Blue[d_ck='submit']")
 
     def select_party(self, name):
-        return self.driver.find_element(by=By.XPATH, value=f"//form//a[@class='jstree-anchor' and text()='{name}']")
+        self.element = self.driver.find_element(by=By.XPATH,
+                                                value=f"//form//a[@class='jstree-anchor' and text()='{name}']")
+        return self.element
 
     def add_party(self, name):
         from homework.test_web_weixin.page.contact_page import ContactPage
