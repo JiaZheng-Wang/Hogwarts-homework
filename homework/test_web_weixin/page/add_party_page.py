@@ -9,7 +9,6 @@ from selenium.webdriver.common.by import By
 from homework.test_web_weixin.page.base_page import BasePage
 
 
-
 class AddPartyPage(BasePage):
     _loc_name = (By.CSS_SELECTOR, ".ww_inputText[name='name']")
     _loc_party_list = (By.CSS_SELECTOR, ".js_toggle_party_list span.ww_btn_Dropdown_arrow")
