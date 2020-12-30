@@ -17,11 +17,11 @@ class TestApp:
         caps = {}
         caps["platformName"] = "Android"
         caps["platformVersions"] = "6.0"
-        caps["deviceName"] = "127.0.0.1:62001"
+        caps["deviceName"] = "127.0.0.1:7555"
         caps["appPackage"] = "com.xueqiu.android"
         caps["appActivity"] = ".view.WelcomeActivityAlias"
         caps["noReset"] = "true"
-        caps["dontStopAppOnReset"] = "true"
+        # caps["dontStopAppOnReset"] = "true"
         caps["skipDeviceInitialization"] = "true"
         # caps["browserName"] = "Browser"
         caps["chromedriverExecutable"] = r"D:\Android\chromedriver.exe"
@@ -35,7 +35,9 @@ class TestApp:
         print("==========")
         print(self.driver.contexts)
         self.driver.find_element_by_xpath("//*[@resource-id='com.xueqiu.android:id/tab_name' and @text='交易']").click()
-        sleep(5)
+        sleep(2)
         print(self.driver.contexts)
-        self.driver.find_element_by_xpath("//*[@class='android.view.View' and @text='免费领']").click()
+        self.driver.find_element_by_xpath("//*[@class='android.view.View' and @content-desc='免费领']").click()
+        sleep(5)
+        # self.driver
 
