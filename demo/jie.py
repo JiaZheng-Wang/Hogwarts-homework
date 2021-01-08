@@ -2,6 +2,7 @@
 # @Author  : Sylar
 # @Explain : 
 # @Software: PyCharm
+import os
 
 tur = ("123", 45)
 print(tur)
@@ -13,7 +14,6 @@ def tmp(*args):
     print(args)
     # print(a)
     # print(b)
-
 
 def tmp1(a, b):
 

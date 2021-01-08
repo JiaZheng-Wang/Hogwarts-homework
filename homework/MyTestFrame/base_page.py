@@ -8,12 +8,16 @@ from appium.webdriver import WebElement
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
 
+from homework.MyTestFrame.black_handle import black_wrapper
+
 
 class BasePage:
 
     def __init__(self, driver: WebDriver = None):
         self.driver = driver
+        self.black_list = [(MobileBy.XPATH, "//*[@resource-id='com.xueqiu.android:id/iv_close']")]
 
+    @black_wrapper
     def find(self, by, locator):
         return self.driver.find_element(by=by, value=locator)
 
