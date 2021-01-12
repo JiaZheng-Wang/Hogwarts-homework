@@ -1,7 +1,17 @@
-# @Time    : 2021/1/4 16:44
-# @Author  : Sylar
-# @Explain : 
-# @Software: PyCharm
+# def warpper(func)
 
-a=1231412312
-print(type(a))
+
+def func():
+    while True:
+        x = yield
+        print("x:", x)
+        if x == 11:
+            break
+
+
+
+f=func()
+next(f)
+f.send(1)
+f.send(2)
+f.send(3)

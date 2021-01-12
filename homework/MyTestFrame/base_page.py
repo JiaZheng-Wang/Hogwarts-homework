@@ -3,7 +3,9 @@
 # @Explain : 
 # @Software: PyCharm
 import logging
+import time
 
+import yaml
 from appium.webdriver import WebElement
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
@@ -12,6 +14,12 @@ from homework.MyTestFrame.black_handle import black_wrapper
 
 
 class BasePage:
+    FIND = 'find'
+    SEND = 'send'
+    CONTENT = 'content'
+    FIND_AND_CLICK = 'find_and_click'
+    LOCATOR='location'
+    ACTION='action'
 
     def __init__(self, driver: WebDriver = None):
         self.driver = driver
@@ -56,3 +64,22 @@ class BasePage:
         result = self.find(MobileBy.XPATH, "//*[@class='android.widget.Toast']").text
         logging.info(result)
         return result
+
+    def load(self, path):
+        with open(path, encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+        for step in data:
+            # element=self.find(step['location'])
+            if step.get(self.ACTION) == self.FIND_AND_CLICK:
+                self.find_and_click(by=MobileBy.XPATH, locator=step.get(self.LOCATOR))
+            if step.get(self.ACTION) == self.FIND:
+                self.find(step['location']).send_keys(step['content'])
+
+    def screen_png(self):
+        self.driver.save_screenshot("tmp.png")
+
+
+    def record_screen(self):
+        self.driver.start_recording_screen()
+        time.sleep(5)
+        self.driver.stop_recording_screen()

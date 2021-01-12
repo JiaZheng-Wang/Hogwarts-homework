@@ -1,0 +1,8 @@
+-
+  location : //*[@resource-id="com.xueqiu.android:id/post_status"]
+  action : find_and_click
+
+-
+  location : //*[@resource-id='android:id/tabs']//*[@text='行情']
+  action : find_and_click
+

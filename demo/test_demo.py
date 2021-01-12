@@ -2,7 +2,11 @@
 # @Author  : Sylar
 # @Explain : 
 # @Software: PyCharm
+import logging
+
 import pytest
+
+logging.basicConfig(level=logging.INFO)
 
 
 class TestDemo:
@@ -15,6 +19,7 @@ class TestDemo:
 
     @pytest.mark.parametrize("a,b", [[1, 2], [3, 4], [5, 6]])
     def test_one(self, a, b):
+        logging.info("asd")
         assert b - a == 1
 
     @pytest.mark.demo
