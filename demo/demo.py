@@ -2,20 +2,13 @@
 # @Author  : Sylar
 # @Explain : 
 # @Software: PyCharm
-
-def wrapper(func):
-    def run(*args):
-        print("==")
-        func(*args)
-
-    return run
+import yaml
 
 
-@wrapper
-def a():
-    try:
-        return 1 / 0
-    except Exception as e:
-        for i in range(2):
-            a()
-a()
+def demo():
+    with open('demo.yaml') as f:
+        data = yaml.safe_load(f)
+        print(data)
+
+
+demo()

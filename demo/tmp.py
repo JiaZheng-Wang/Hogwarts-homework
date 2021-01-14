@@ -1,17 +1,22 @@
-# def warpper(func)
+def typed_property(name, expected_type):
+    storage_name = '_' + name
 
+    @property
+    def prop(self):
+        return getattr(self, storage_name)
 
-def func():
-    while True:
-        x = yield
-        print("x:", x)
-        if x == 11:
-            break
+    @prop.setter
+    def prop(self, value):
+        if not isinstance(value, expected_type):
+            raise TypeError('{} must be a {}'.format(name, expected_type))
+        setattr(self, storage_name, value)
 
+    return prop
 
+class Person:
+    name = typed_property('name', str)
+    age = typed_property('age', int)
 
-f=func()
-next(f)
-f.send(1)
-f.send(2)
-f.send(3)
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
