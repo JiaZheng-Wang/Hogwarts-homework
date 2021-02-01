@@ -12,4 +12,4 @@ data = {
 data1 = '{  "name": "wjz",    "age": 15}'
 print(type(data))
 print(type(json.dumps(data)))
-print(type(json.loads(data1)))
+print(type(json.loads))
